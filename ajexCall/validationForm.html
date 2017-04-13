@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
+    <script>
+        jQuery(function ($) {
+            var validator = $('#news_action').validate({
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {},
+                highlight: function (element) {
+                    $(element).parent().addClass('error')
+                },
+                unhighlight: function (element) {
+                    $(element).parent().removeClass('error')
+                }
+            });
+        });
+    </script>
+    <style>
+        #news_action .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form id="news_action" method="post" action="">
+    <div class="info">
+        <div>Type your name:<input id="input-name" type="text" name="name"/></div>
+        <div>Type your email:<input type="text" name="email"/></div>
+    </div>
+    <input type="submit" class="button" value="Submit" />
+</form>
+</body>
+</html>

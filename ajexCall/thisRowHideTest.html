@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#askQuestion").click(function(){
+                $('#table1 .hideme').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<table id='table1' border="1">
+    <tr class='hideme'>
+        <td class='letmehide'>row 1, cell 1</td>
+        <td class='letmehide'>row 1, cell 2</td>
+        <td><button type="button" id="askQuestion">Hide This Row</button></td>
+    </tr>
+    <tr class='donthideme'>
+        <td class='dontletmehide'>row 2, cell 1</td>
+        <td class='dontletmehide'>row 2, cell 2</td>
+    </tr>
+</table>
+</body>
+</html>
